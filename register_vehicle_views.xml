@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="register_vehicle_form_view" model="ir.ui.view">
+            <field name="name">register.vehicle.form.view</field>
+            <field name="model">register.vehicle</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="customer_id" required="1"/>
+                                <field name="vehicle_brand_id" required="1"/>
+                                <field name="registration_no" required="1"/>
+                                <field name="vehicle_fuel_type_id" required="1"/>
+                            </group>
+                            <group>
+                                <field name="vehicle_model_id" required="1"/>
+                                <field name="vin_no"/>
+                                <field name="transmission_type" widget="radio" options="{'horizontal': true}"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="register_vehicle_tree_view" model="ir.ui.view">
+            <field name="name">register.vehicle.tree.view</field>
+            <field name="model">register.vehicle</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="customer_id"/>
+                    <field name="vehicle_brand_id"/>
+                    <field name="vehicle_model_id"/>
+                    <field name="registration_no"/>
+                    <field name="vehicle_fuel_type_id"/>
+                    <field name="vin_no"/>
+                    <field name="transmission_type"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_register_vehicle" model="ir.actions.act_window">
+            <field name="name">Register Vehicle</field>
+            <field name="res_model">register.vehicle</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>
